@@ -1,0 +1,435 @@
+/* variables */
+
+:root{
+    --theme-color: rgba(1, 1, 1, 0.64);
+}
+
+/* Fonts */
+
+@font-face{
+    font-family: 'permanent marker';
+    src: url(../Fonts/PermanentMarker-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'PressStart2P';
+    src: url(../Fonts/PressStart2P-Regular.ttf);
+}
+
+/* base styles */
+
+/* mobile styles*/
+
+nav, footer, #wheel-edit-wrapper{
+    background: var(--theme-color);
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+nav div{
+    text-align: center;
+    margin: auto;
+}
+
+nav div a{
+    text-decoration: none;
+    color: white;
+}
+
+nav, footer {
+    height: 66px;
+    width: 100%;
+    margin: 0;
+}
+
+#main-content-wrapper{
+    overflow: visible;
+}
+
+#wheel-wrapper{    
+    margin: 66px auto;
+}
+
+#wheel-outer-circle{
+    position: relative;
+    width: 528px;
+    height: 528px;
+    border-radius: 50%;
+    border: 2px solid var(--theme-color); 
+    margin: 0 auto;
+    animation: spin 1.5s 0.5s;
+    z-index: 1;
+    
+}
+
+/* #test-circle{
+    position: absolute;
+    border: 2px solid var(--theme-color);
+    width: 594px;
+    height: 594px;
+    border-radius: 50%;
+    top: -34px;
+    left: -34px;
+    z-index: 0;
+    background-color: var(--theme-color);
+} */
+
+
+#wheel-inner-circle{
+    position: absolute;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    top: 196px;
+    left: 196px;
+    z-index: 1;
+}
+
+.grey-line{
+    width: 524px;
+    top: 261px;
+    position: absolute;
+    border: 1px grey solid;
+    opacity: 0.25;
+    transform-origin: center;
+}
+
+.habit-line{
+    width: 262px;
+    top: 261;
+    position: absolute;
+    border: 1px solid var(--theme-color);
+    transform-origin: right;
+}
+
+#hour-hand{
+    border: 1px solid crimson;
+}
+
+.habit-name{
+    width: 262px;
+    top: 249px;
+    position: absolute;
+    transform-origin: right;
+    font-size: small;
+    font-family: 'permanent marker';
+    color: crimson;
+}
+
+.hour-markings{
+    position: absolute;
+    width: 520px;
+    top: 249px;
+    left: 2px;
+}
+
+p.flip{
+    text-align: right;
+}
+
+#add-habit-form-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#add-habit-form-popup{
+    text-align: center;
+    margin: 20% auto;
+    background: var(--theme-color);
+    padding: 20px;
+    position: relative;
+    max-width: 250px;
+    height: 370px;
+}
+
+div form input{
+    margin:5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#create-habit-form-close{
+    border: none;
+    border-radius: 20px;
+    
+}
+
+#wheel-edit-wrapper{
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    width: 528px;
+    height: 110px;
+    border: 1px dotted black;
+    margin: 22px auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+#wheel-edit-wrapper button{
+    margin: 12px 12px;
+}
+
+@keyframes spin {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+#create-habit-button-wrapper{
+    margin: auto;
+}
+
+#create-habit-button{
+    border: white 3px solid;
+    position: absolute;
+    top: 33px;
+    left: 33px;
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+    background-color: crimson;
+    color:white;
+    font-size: 44px;
+    transition: 0.5s;
+}
+
+#create-habit-button:hover{
+    color: crimson;
+    background-color: white;
+    transform: rotate(90deg);
+}
+
+button p{
+    transform: translateY(-9px);
+}
+
+footer{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Screen-width 780px Breakpoint */
+
+@media screen and (min-width: 780px) {
+    
+    #wheel-wrapper{
+        margin: 22px auto;
+    }
+
+    #wheel-outer-circle{
+        width: 616px;
+        height: 616px;
+    }
+
+    .grey-line{
+        width: 612px;
+        top: 305px;
+    }
+
+    #wheel-inner-circle{
+        top: 240px;
+        left: 240px;
+    }
+
+    #wheel-edit-wrapper{
+        width: 616px;
+    }
+
+    .hour-markings{
+        width: 606px;
+        top: 293px;
+    }
+
+    .habit-line{
+        width: 306px;
+        top: 305;
+    }
+    
+    .habit-name{
+        width: 306px;
+        top: 293px;
+        font-size: medium;
+}
+}
+/* Screen-width 988px Breakpoint */
+
+@media screen and (min-width: 988px) {
+  
+    #main-content-wrapper{
+        display: grid;
+        grid-template-columns: 9fr 3fr;
+    }   
+    
+    #wheel-edit-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        width: 154px;
+        height: 616px;
+    }
+
+    #wheel-wrapper{
+        margin: 44px auto;
+    }
+
+    #wheel-outer-circle{
+        width: 704px;
+        height: 704px;
+    }
+
+    .grey-line{
+        width: 700px;
+        top: 349px;
+    }
+
+    #wheel-inner-circle{
+        top: 284px;
+        left: 284px;
+    }
+
+    #wheel-edit-wrapper{
+        margin: auto;
+    }
+
+    .hour-markings{
+        width: 695px;
+        top: 337px;
+    }
+
+    .habit-line{
+        width: 350px;
+        top: 349;
+    }
+    
+    .habit-name{
+        width: 350px;
+        top: 337px;
+}
+}
+
+/* Screen-width 1196px Breakpoint */
+
+@media screen and (min-width: 1196px) {
+    
+    #wheel-wrapper{
+        margin: 22px auto;
+    }
+
+    #wheel-outer-circle{
+        width: 814px;
+        height: 814px;
+    }
+
+    .grey-line{
+        width: 810px;
+        top: 404px;
+    }
+
+    #wheel-inner-circle{
+        top: 339px;
+        left: 339px;
+    }
+
+    .hour-markings{
+        width: 805px;
+        top: 392px;
+    }
+
+    .habit-line{
+        width: 405px;
+        top: 404;
+    }
+    
+    .habit-name{
+        width: 405px;
+        top: 392px;
+        font-size: large;
+}
+}
+
+/* Screen-width 1404px Breakpoint */
+
+@media screen and (min-width: 1404px) {
+    
+}
+
+/* Rotation Classes */
+
+.r15{
+    transform: rotate(15deg); 
+}
+.r30{
+    transform: rotate(30deg);
+}
+.r45{ 
+    transform: rotate(45deg);
+}
+.r60{
+    transform: rotate(60deg);
+}
+.r75{
+    transform: rotate(75deg); 
+}
+.r90{
+    transform: rotate(90deg); 
+}
+.r105{
+    transform: rotate(105deg); 
+}
+.r120{ 
+    transform: rotate(120deg);
+}
+.r135{
+    transform: rotate(135deg); 
+}
+.r150{
+    transform: rotate(150deg); 
+}
+.r165{
+    transform: rotate(165deg); 
+}
+.r180{
+    transform: rotate(180deg); 
+}
+.r195{
+    transform: rotate(195deg); 
+}
+.r210{
+    transform: rotate(210deg); 
+}
+.r225{
+    transform: rotate(225deg); 
+}
+.r240{
+    transform: rotate(240deg); 
+}
+.r255{
+    transform: rotate(255deg); 
+}
+.r270{
+    transform: rotate(270deg); 
+}
+.r285{
+    transform: rotate(285deg); 
+}
+.r300{
+    transform: rotate(300deg); 
+}
+.r315{
+    transform: rotate(315deg); 
+}
+.r330{
+    transform: rotate(330deg); 
+}
+.r345{
+    transform: rotate(345deg); 
+}
